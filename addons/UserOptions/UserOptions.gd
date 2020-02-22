@@ -23,8 +23,12 @@ var _cfg: ConfigFile = ConfigFile.new()
 func _init() -> void:
 	load_defaults()
 	load_useroptions()
-	_broadcast_useropations()
 	_cfg.save(USER_OPTIONS_PATH)
+
+
+func _ready() -> void:
+	yield(get_tree(), "idle_frame") # To ensure the rest of the game has loaded
+	_broadcast_useroptions()
 
 
 func load_defaults() -> void:
@@ -55,7 +59,7 @@ func set_option(category: String, option: String, value) -> void:
 	_cfg.set_value(category, option, value)
 	_cfg.save(USER_OPTIONS_PATH)
 	
-	emit_signal("option_changed", category, option, value)
+	_broadcast_option(category, option, value)
 
 
 func get_option(category: String, option: String, fallback_value = null): # -> variant
@@ -71,7 +75,12 @@ func get_option(category: String, option: String, fallback_value = null): # -> v
 	return _cfg.get_value(category, option)
 
 
-func _broadcast_useropations() -> void:
+func _broadcast_useroptions() -> void:
 	for c in _cfg.get_sections():
 		for k in _cfg.get_section_keys(c):
-			emit_signal("option_changed", c, k, _cfg.get_value(c, k, null))
+			_broadcast_option(c, k, _cfg.get_value(c, k, null))
+
+
+func _broadcast_option(category, option, value) -> void:
+	emit_signal("option_changed", category, option, value)
+	print("UserOption set: %s %s %s" % [category, option, value])
