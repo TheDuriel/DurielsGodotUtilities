@@ -1,3 +1,4 @@
+tool
 extends Node
 """
 	UserOptions Singleton Script
@@ -13,7 +14,7 @@ extends Node
 """
 signal option_changed(category, option, value)
 
-export(String, FILE, "*.ini") var DEFAULT_OPTIONS_PATH: String = ".Addons/UserOptions/UserOptions.ini" #Next to this file.
+export(String, FILE, "*.ini") var DEFAULT_OPTIONS_PATH: String = "./Addons/UserOptions/UserOptions.ini" #Next to this file.
 export(String, FILE, "*.ini") var USER_OPTIONS_PATH: String = "user://UserOptions.ini"
 
 var _cfg: ConfigFile = ConfigFile.new()
@@ -22,6 +23,8 @@ var _cfg: ConfigFile = ConfigFile.new()
 func _init() -> void:
 	load_defaults()
 	load_useroptions()
+	_broadcast_useropations()
+	_cfg.save(USER_OPTIONS_PATH)
 
 
 func load_defaults() -> void:
@@ -66,3 +69,9 @@ func get_option(category: String, option: String, fallback_value = null): # -> v
 		return fallback_value
 	
 	return _cfg.get_value(category, option)
+
+
+func _broadcast_useropations() -> void:
+	for c in _cfg.get_sections():
+		for k in _cfg.get_section_keys(c):
+			emit_signal("option_changed", c, k, _cfg.get_value(c, k, null))
