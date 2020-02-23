@@ -19,6 +19,3 @@
 # Other
 *.shape filter=lfs diff=lfs merge=lfs -text
 *.mesh filter=lfs diff=lfs merge=lfs -text
-
-# Blender
-*.blend[1-9]
