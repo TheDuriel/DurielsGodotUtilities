@@ -12,15 +12,15 @@ signal state_change_requested(new_state_name)
 var _owner: Object
 
 
-func can_enter(machine: StateMachine, new_owner: Object) -> bool:
+func can_enter(machine, new_owner: Object) -> bool:
 	return i_can_enter(machine, new_owner)
 
 
-func i_can_enter(machine: StateMachine, new_owner: Object) -> bool:
+func i_can_enter(machine, new_owner: Object) -> bool:
 	return true
 
 
-func enter_state(machine: StateMachine, new_owner: Object) -> void:
+func enter_state(machine, new_owner: Object) -> void:
 	connect("state_completed", machine, "_on_current_state_state_completed")
 	connect("state_change_requested", machine, "_on_current_state_state_change_requested")
 	
@@ -47,12 +47,12 @@ func input(input_event: InputEvent) -> void:
 	i_input(input_event)
 
 
-func i_input(inout_event: InputEvent) -> void:
+func i_input(input_event: InputEvent) -> void:
 	pass
 
 
 	# Called by StateMachine upon Exiting this State
-func exit_state(machine: StateMachine) -> void:
+func exit_state(machine) -> void:
 	disconnect("state_completed", machine, "_on_current_state_state_completed")
 	disconnect("state_change_requested", machine, "_on_current_state_state_change_requested")
 	i_exit_state()

@@ -17,7 +17,7 @@ func i_advance(delta: float) -> void:
 
 
 	# Called every Input by StateMachine
-func i_input(inout_event: InputEvent) -> void:
+func i_input(input_event: InputEvent) -> void:
 	pass
 
 
