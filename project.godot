@@ -8,15 +8,84 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Reference",
+"class": "State",
+"language": "GDScript",
+"path": "res://addons/StateMachine/State.gd"
+}, {
+"base": "Reference",
+"class": "StateCollection",
+"language": "GDScript",
+"path": "res://addons/StateMachine/StateCollection.gd"
+}, {
+"base": "Reference",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://addons/StateMachine/StateMachine.gd"
+}, {
+"base": "Reference",
+"class": "UAIAction",
+"language": "GDScript",
+"path": "res://UtilityAI-Static/UAIAction.gd"
+}, {
+"base": "Node",
+"class": "UAIAdvertiser",
+"language": "GDScript",
+"path": "res://UtilityAI-Static/UAIAdvertiser.gd"
+}, {
+"base": "Reference",
+"class": "UAIChooser",
+"language": "GDScript",
+"path": "res://UtilityAI-Static/UAIChooser.gd"
+}, {
+"base": "Resource",
+"class": "UAINeed",
+"language": "GDScript",
+"path": "res://UtilityAI-Static/UAINeed.gd"
+}, {
+"base": "Reference",
+"class": "UAIRanker",
+"language": "GDScript",
+"path": "res://UtilityAI-Static/UAIRanker.gd"
+}, {
+"base": "Node",
+"class": "UtilityAI",
+"language": "GDScript",
+"path": "res://UtilityAI-Static/UtilityAI.gd"
+}, {
+"base": "Spatial",
+"class": "VRMousePointer",
+"language": "GDScript",
+"path": "res://addons/VRUI/VRMousePointer.gd"
+}, {
+"base": "Spatial",
+"class": "VRUIDisplay",
+"language": "GDScript",
+"path": "res://addons/VRUI/VRUIDisplay.gd"
+} ]
 _global_script_class_icons={
-
+"State": "",
+"StateCollection": "",
+"StateMachine": "",
+"UAIAction": "",
+"UAIAdvertiser": "",
+"UAIChooser": "",
+"UAINeed": "",
+"UAIRanker": "",
+"UtilityAI": "",
+"VRMousePointer": "",
+"VRUIDisplay": ""
 }
 
 [application]
 
 config/name="DurielsGodotUtilities"
 config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "DurielEditorTools" )
 
 [rendering]
 

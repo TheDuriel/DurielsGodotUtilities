@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UIComponents/SimilaritySearch/SimilaritySearch.gd" type="Script" id=1]
+
+[node name="SimilaritySearch" type="VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 128, 128 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_right = 128.0
+margin_bottom = 24.0
+context_menu_enabled = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_top = 28.0
+margin_right = 128.0
+margin_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+[connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="meta_clicked" from="RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
