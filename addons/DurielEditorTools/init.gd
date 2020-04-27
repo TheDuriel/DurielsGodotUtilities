@@ -32,8 +32,6 @@ func _enter_tree() -> void:
 	# Get Script Editor Button
 	script_editor_button = freeze_button.get_parent().get_child(2).get_child(2)
 	
-	# Disable Asset Library Button
-	freeze_button.get_parent().get_child(2).get_child(3).visible = false
 	
 	# Force Set Minimum Size to all Docks
 	# Not Cleaned Up on Exit
@@ -44,6 +42,10 @@ func _enter_tree() -> void:
 		yield(get_tree(), "idle_frame")
 		remove_control_from_docks(nuke)
 	nuke.queue_free()
+	
+	# Disable Asset Library Button
+	yield(get_tree(), "idle_frame")
+	freeze_button.get_parent().get_child(2).get_child(3).visible = false
 
 
 func _exit_tree() -> void:
