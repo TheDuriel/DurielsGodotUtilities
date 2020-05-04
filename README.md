@@ -15,6 +15,8 @@ Like the content? Follow me on Twitter @the_duriel or support my Patreon https:/
 
 Some highlights:
 
+`.gitignore` and `.gitattributes` covering many standard file formats and conventions relating to Godot.
+
 `addons/DurielEditorTools` adds some minor, yet useful enhancements, to the Editor. Including enhanced performance when running your game, (by switching to the script view, and optionally preventing the editor from rendering in the background), and setting a fixed minimum size to all Docks. It also hides the Asset library button.
 
 `addonsbasic/AutoAstar2D` is an Astar2D wrapper which allows you to visually build A* grids from within the editor. The grid can be updated in _real time_, even during gameplay. https://twitter.com/the_duriel/status/1248239309116899328
