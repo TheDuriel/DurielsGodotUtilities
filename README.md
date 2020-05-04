@@ -3,7 +3,7 @@ A collection of useful Scripts, Scenes, Systems, and Templates for the Godot Gam
 
 All content is MIT.
 
-Like the content? Follow me on Twitter @the_duriel or support my Patreon https://www.patreon.com/TheDuriel
+Like the content? Follow me on Twitter https://twitter.com/the_duriel or support my Patreon https://www.patreon.com/TheDuriel
 
 * `Classes/`, Standalone Classes of various nature.
 * `UIComponents/`, Individual Control classes or entire Scenes.
