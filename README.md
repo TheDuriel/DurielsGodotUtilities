@@ -7,7 +7,7 @@ Like the content? Follow me on Twitter https://twitter.com/the_duriel or support
 
 * `Classes/`, Standalone Classes of various nature.
 * `UIComponents/`, Individual Control classes or entire Scenes.
-* `UtilityAI-Static`, the Core components of a Utility based AI model.
+* `UtilityAI-Static/`, the Core components of a Utility based AI model.
 * `VR/` VR specific Classes and Scenes.
 * `addons/` Editor Plugins.
 * `addonsbasic/` More complex systems which use class_name to add themselves to your editor.
