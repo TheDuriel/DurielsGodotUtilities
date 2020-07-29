@@ -1,0 +1,128 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/RichTextEditor/RichTextEditor.gd" type="Script" id=2]
+
+[node name="RichTextEditor" type="PanelContainer"]
+margin_right = 721.0
+margin_bottom = 419.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="H" type="HBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 714.0
+margin_bottom = 412.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Tools" type="VBoxContainer" parent="H"]
+margin_right = 75.0
+margin_bottom = 405.0
+
+[node name="bbold" type="Button" parent="H/Tools"]
+margin_right = 75.0
+margin_bottom = 20.0
+text = "Bold"
+
+[node name="bitalic" type="Button" parent="H/Tools"]
+margin_top = 24.0
+margin_right = 75.0
+margin_bottom = 44.0
+text = "Italic"
+
+[node name="bunder" type="Button" parent="H/Tools"]
+margin_top = 48.0
+margin_right = 75.0
+margin_bottom = 68.0
+text = "Underline"
+
+[node name="HSeparator" type="HSeparator" parent="H/Tools"]
+margin_top = 72.0
+margin_right = 75.0
+margin_bottom = 76.0
+
+[node name="bcode" type="Button" parent="H/Tools"]
+margin_top = 80.0
+margin_right = 75.0
+margin_bottom = 100.0
+text = "Code"
+
+[node name="HSeparator2" type="HSeparator" parent="H/Tools"]
+margin_top = 104.0
+margin_right = 75.0
+margin_bottom = 108.0
+
+[node name="bcenter" type="Button" parent="H/Tools"]
+margin_top = 112.0
+margin_right = 75.0
+margin_bottom = 132.0
+text = "Center"
+
+[node name="bright" type="Button" parent="H/Tools"]
+margin_top = 136.0
+margin_right = 75.0
+margin_bottom = 156.0
+text = "Right"
+
+[node name="bfill" type="Button" parent="H/Tools"]
+margin_top = 160.0
+margin_right = 75.0
+margin_bottom = 180.0
+text = "Fill"
+
+[node name="Label" type="Label" parent="H/Tools"]
+margin_top = 262.0
+margin_right = 75.0
+margin_bottom = 327.0
+mouse_filter = 1
+size_flags_vertical = 6
+text = "Drop Theme here to Preview."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TextEdit" type="TextEdit" parent="H"]
+margin_left = 79.0
+margin_right = 387.0
+margin_bottom = 405.0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+highlight_current_line = true
+syntax_highlighting = true
+show_line_numbers = true
+highlight_all_occurrences = true
+wrap_enabled = true
+caret_blink = true
+
+[node name="HSeparator" type="VSeparator" parent="H"]
+margin_left = 391.0
+margin_right = 395.0
+margin_bottom = 405.0
+
+[node name="P" type="PanelContainer" parent="H"]
+margin_left = 399.0
+margin_right = 707.0
+margin_bottom = 405.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="H/P"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 301.0
+margin_bottom = 398.0
+bbcode_enabled = true
+scroll_following = true
+[connection signal="pressed" from="H/Tools/bbold" to="." method="_on_bbold_pressed"]
+[connection signal="pressed" from="H/Tools/bitalic" to="." method="_on_bitalic_pressed"]
+[connection signal="pressed" from="H/Tools/bunder" to="." method="_on_bunder_pressed"]
+[connection signal="pressed" from="H/Tools/bcode" to="." method="_on_bcode_pressed"]
+[connection signal="pressed" from="H/Tools/bcenter" to="." method="_on_bcenter_pressed"]
+[connection signal="pressed" from="H/Tools/bright" to="." method="_on_bright_pressed"]
+[connection signal="pressed" from="H/Tools/bfill" to="." method="_on_bfill_pressed"]
+[connection signal="gui_input" from="H/TextEdit" to="." method="_on_TextEdit_gui_input"]
+[connection signal="text_changed" from="H/TextEdit" to="." method="_on_TextEdit_text_changed"]

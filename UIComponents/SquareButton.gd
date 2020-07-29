@@ -4,4 +4,4 @@ class_name SquareButton
 
 
 func _init() -> void:
-	rect_min_size = Vector2(32, 32)
+	rect_min_size = Vector2(24, 24)

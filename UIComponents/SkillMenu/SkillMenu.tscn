@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UIComponents/SkillMenu/SkillMenu.gd" type="Script" id=1]
+
+[node name="SkillMenu" type="VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="HBoxContainer" parent="."]
+margin_right = 124.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="Header"]
+margin_right = 112.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "Points remaining:"
+
+[node name="PointsRemaining" type="Label" parent="Header"]
+margin_left = 116.0
+margin_right = 124.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "0"
+align = 2
+
+[node name="HSeparator" type="HSeparator" parent="."]
+margin_top = 18.0
+margin_right = 124.0
+margin_bottom = 22.0
+
+[node name="Entries" type="VBoxContainer" parent="."]
+margin_top = 26.0
+margin_right = 124.0
+margin_bottom = 26.0
+custom_constants/separation = 0
