@@ -40,6 +40,7 @@ Thumbs.db
 ##########################
 .import/
 export.cfg
+export_presets.cfg
 
 # Project-specific ignores #
 ############################
